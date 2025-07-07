@@ -2719,32 +2719,41 @@ td:last-child {
  * ## section header
  * ------------------------------------------------------------------- */
 .section-header {
-    display      : flex;
-    flex-direction: column; /* ✅ Add this line */
-    align-items  : flex-start;
+    display: flex;
+    flex-direction: column;      /* Ensures h2 and p stack vertically */
+    align-items: flex-start;
+    position: relative;
+    padding-left: 2.5em;         /* Adds space so the ::before number doesn't overlap */
     margin-bottom: var(--vspace-3_5);
-    position     : relative;
 }
 
 .section-header .text-display-title {
-    padding-top  : 0.5em;
-    margin-bottom: 0;
-    position     : relative;
+    padding-top: 0.5em;
+    margin-bottom: 0.5em;        /* Adds space below the heading */
+    position: relative;
 }
 
 .section-header::before {
-    content       : attr(data-num);
-    font-family   : var(--font-1);
-    font-weight   : 600;
-    font-size     : 10em;
+    content: attr(data-num);
+    font-family: var(--font-1);
+    font-weight: 600;
+    font-size: 10em;
     letter-spacing: -0.05em;
-    line-height   : 1;
-    color         : var(--color-gray-11);
-    margin-right  : var(--vspace-0_5);
-    position      : absolute;
-    top           : -0.25em;
-    left          : -0.1em;
-    opacity       : 0.5;
+    line-height: 1;
+    color: var(--color-gray-11);
+    position: absolute;
+    top: -0.25em;
+    left: 0;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.section-header p {
+    font-size: 2rem;
+    line-height: 1.6;
+    color: var(--color-black-12); /* You can change to any readable color */
+    z-index: 1;                  /* Ensures paragraph appears above the big number */
+    margin: 0;
 }
 
 .section-header.light-on-dark .text-display-title {
