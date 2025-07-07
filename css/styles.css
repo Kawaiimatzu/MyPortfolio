@@ -2720,6 +2720,7 @@ td:last-child {
  * ------------------------------------------------------------------- */
 .section-header {
     display      : flex;
+    flex-direction: column; /* ✅ Add this line */
     align-items  : flex-start;
     margin-bottom: var(--vspace-3_5);
     position     : relative;
