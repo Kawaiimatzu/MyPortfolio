@@ -4056,67 +4056,59 @@ td:last-child {
 /* ------------------------------------------------------------------- 
  * ## testimonials
  * ------------------------------------------------------------------- */
-.s-testimonials {
-    padding-top   : var(--vspace-4_5);
-    padding-bottom: var(--vspace-4);
-}
-
-.s-testimonials__header {
-    margin-top   : 0;
-    margin-bottom: var(--vspace-2);
-    text-align   : center;
-}
-
-.s-testimonials .swiper-container {
-    padding-bottom: var(--vspace-2);
-}
-
 .s-testimonials__slide {
     position: relative;
+    text-align: center; /* i-center tanan text sulod sa slide */
 }
 
 .s-testimonials__author {
-    display      : inline-block;
-    min-height   : var(--vspace-2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* center ang image ug text */
     margin-bottom: var(--vspace-0_625);
-    padding-left : calc(2.25 * var(--space));
-    position     : relative;
+    position: relative;
+    padding-left: 0; /* tangtangon ang padding nga para sa absolute image */
+    min-height: auto; /* dili na kinahanglan */
 }
 
 .s-testimonials__avatar {
-    width        : var(--vspace-1_75);
-    height       : var(--vspace-1_75);
+    width: var(--vspace-4);   /* mas dako kaysa 1_75 */
+    height: var(--vspace-4);
     border-radius: 100%;
-    outline      : none;
-    position     : absolute;
-    top          : 0;
-    left         : 0;
+    outline: none;
+    position: static;
+    margin-bottom: 0.75rem; 
 }
+
 
 .s-testimonials__cite {
     display: block;
-}
-
-.s-testimonials__cite strong,
-.s-testimonials__cite span {
-    font-style: normal;
-    transition: all 0.3s ease-in-out;
+    text-align: center; /* center ang name */
 }
 
 .s-testimonials__cite strong {
-    font-size  : calc(var(--text-size) * 0.9);
+    font-size: calc(var(--text-size) * 0.9);
     font-weight: 500;
     line-height: var(--vspace-0_75);
-    color      : var(--color-text-dark);
+    color: var(--color-text-dark);
 }
 
 .s-testimonials__cite span {
-    display    : block;
-    font-size  : calc(var(--text-size) * 0.75);
+    display: block;
+    font-size: calc(var(--text-size) * 0.75);
     font-weight: 400;
     line-height: var(--vspace-0_5);
-    color      : var(--color-text-light);
+    color: var(--color-text-light);
+    text-align: center;
 }
+
+.s-testimonials__slide p {
+    text-align: center;   /* i-center ang paragraph text */
+    max-width: 600px;     /* optional: aron dili kaayo wide across screen */
+    margin: 0 auto;       /* para ma-center ang block mismo */
+}
+
+
 
 /* ------------------------------------------------------------------- 
  * responsive:
